@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Корусантская гвардия</title>
+
+<style>
+/* ===== ОСНОВНЫЕ НАСТРОЙКИ ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6b0000, #0a1a2f);
+    color: #f1faee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ===== ШАПКА ===== */
+.header {
+    text-align: center;
+    padding: 20px;
+    background: rgba(30, 0, 0, 0.9);
+    border-bottom: 3px solid #caa24d;
+}
+
+.header h1 {
+    font-size: 2.8rem;
+    color: #caa24d;
+}
+
+/* ===== НАВИГАЦИЯ ===== */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-list li {
+    margin: 10px 15px;
+}
+
+.nav-list a {
+    color: #caa24d;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.nav-list a:hover {
+    color: #ffffff;
+}
+
+/* ===== ИНФО ===== */
+.info {
+    margin: 20px;
+    padding: 20px;
+    background: rgba(10, 20, 40, 0.8);
+    border: 2px solid #caa24d;
+    border-radius: 10px;
+}
+
+.quote {
+    margin-top: 15px;
+    padding: 15px;
+    font-style: italic;
+    border-left: 4px solid #caa24d;
+    background: rgba(202, 162, 77, 0.15);
+}
+
+/* ===== СОСТАВ ===== */
+.positions-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.position-box {
+    flex: 1 1 300px;
+    background: rgba(20, 0, 0, 0.9);
+    border: 2px solid #caa24d;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(202, 162, 77, 0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.position-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(202, 162, 77, 1);
+}
+
+.position-box h3 {
+    color: #caa24d;
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО ===== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #0a1a2f;
+    border: 2px solid #caa24d;
+    padding: 20px;
+    width: 85%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #6b0000;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* ===== ФУТЕР (ИСПРАВЛЕННЫЙ) ===== */
+.footer {
+    margin-top: auto;
+    padding: 15px;
+    text-align: center;
+    background: rgba(30, 0, 0, 0.9);
+    border-top: 2px solid #caa24d;
+    color: #caa24d;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <h1>Корусантская гвардия</h1>
+    <p>Корусантская гвардия — порядок и защита Республики</p>
+
+    <nav>
+        <ul class="nav-list">
+            <li><a href="main_info.html">Информация</a></li>
+            <li><a href="upgrade_system.html">Повышения</a></li>
+            <li><a href="documentation.html">Документы</a></li>
+            <li><a href="military_doctors.html">История Маршалов</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="info">
+    <h2>О подразделении</h2>
+    <p>
+        Корусантская гвардия отвечает за обеспечение безопасности
+        всего состава Республики.
+    </p>
+
+    <blockquote class="quote">
+        «Да здравствует Гвардия!»
+        <span style="display:block; margin-top:10px; font-size:0.95rem; color:#caa24d; text-align:right;">
+            — слоган подразделения «Корусантская Гвардия»
+        </span>
+    </blockquote>
+</section>
+
+<section>
+    <h2 style="text-align:center;">Действующий КМД состав</h2>
+
+    <div class="positions-container">
+        <div class="position-box" onclick="openModal(
+            'Маршал',
+            'Номер: 0025',
+            'Имя: Madara',
+            'Главный КМД Корусантской гвардии.'
+        )">
+            <h3>Маршал</h3>
+            <p>Номер: 0025</p>
+            <p>Имя: Madara</p>
+        </div>
+
+        <div class="position-box" onclick="openModal(
+            'Командир',
+            'Номер: 0005',
+            'Имя: Tom',
+            'Заместитель командира.'
+        )">
+            <h3>Командир</h3>
+            <p>Номер: 0005</p>
+            <p>Имя: Tom</p>
+        </div>
+    </div>
+</section>
+
+<section class="duty-positions">
+    <h2 style="text-align:center;">Действующие должностные лица</h2>
+
+    <div class="positions-container">
+        <div class="position-box" onclick="openModal(
+            'Начальник интендантов',
+            'Номер: 0083',
+            'Имя: Aidava',
+            'Опытный начальник интендантов.'
+        )">
+            <h3>Начальник интендантов</h3>
+            <p>Номер: 0083</p>
+            <p>Имя: Aidava</p>
+        </div>
+
+        <div class="position-box" onclick="openModal(
+            'Начальник ORDER',
+            'Номер: -',
+            'Имя: -',
+            'Нет информации о Начальнике'
+        )">
+            <h3>Начальник ORDER</h3>
+            <p>Номер: -</p>
+            <p>Имя: -</p>
+        </div>
+
+        <div class="position-box" onclick="openModal(
+            'Начальник ODV',
+            'Номер: 0090',
+            'Имя: Harkusha',
+            'Опытный начальник который ввел новые реформы и системы, документации ОДВ, грамотное руководство Взводом, создание новых систем реабилитации, создание основополагающих методов и положений взвода.'
+        )">
+            <h3>Начальник ODV</h3>
+            <p>Номер: 0090</p>
+            <p>Имя: Harkusha</p>
+        </div>
+    </div>
+</section>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h2 id="modal-title"></h2>
+        <p id="modal-number"></p>
+        <p id="modal-name"></p>
+        <p id="modal-info"></p>
+        <button class="close-button" onclick="closeModal()">Закрыть</button>
+    </div>
+</div>
+
+<footer class="footer">
+    © Корусантская гвардия Республики
+</footer>
+
+<script>
+function openModal(title, number, name, info) {
+    document.getElementById("modal-title").innerText = title;
+    document.getElementById("modal-number").innerText = number;
+    document.getElementById("modal-name").innerText = name;
+    document.getElementById("modal-info").innerText = info;
+    document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

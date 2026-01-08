@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>маршалов-коммандеров — Корусантская гвардия</title>
+<style>
+  /* Общие стили */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6b0000, #0a1a2f);
+    color: #f1faee;
+  }
+
+  /* Анимации */
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  @keyframes bounceIn {
+    0% {transform: scale(0.9); opacity: 0;}
+    50% {transform: scale(1.05); opacity: 1;}
+    100% {transform: scale(1);}
+  }
+
+  /* Заголовок */
+  .header {
+    text-align: center;
+    padding: 50px 20px;
+    background: rgba(30, 0, 0, 0.85);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  .header h1 {
+    font-size: 3rem;
+    color: #caa24d;
+    margin: 0;
+  }
+  nav {
+    margin: 20px 0;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .nav-list li {
+    margin: 0 15px;
+  }
+  .nav-list a {
+    color: #caa24d;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-list a:hover {
+    color: #ffffff;
+  }
+
+  /* Контейнер для карточек */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Карточка бойца */
+  .card {
+    background: rgba(30, 0, 0, 0.7);
+    border: 2px solid #caa24d;
+    box-shadow: 0 0 15px rgba(202, 162, 77, 0.8);
+    border-radius: 10px;
+    width: 220px;
+    margin: 15px;
+    padding: 20px;
+    color: #f1faee;
+    text-align: center;
+    animation: bounceIn 0.8s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #caa24d;
+  }
+  .card img {
+    width: 150px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  .card h3 {
+    font-size: 1.6rem;
+    margin: 10px 0 5px 0;
+    color: #a8dadc;
+  }
+  .card p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+  }
+
+  /* Футер */
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(30, 0, 0, 0.95);
+    border-top: 2px solid #caa24d;
+    color: #caa24d;
+    font-size: 14px;
+    animation: fadeIn 1s ease-in;
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <h1>История маршалов-коммандеров Корусантской гвардии</h1>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">Главная страница</a></li>
+      <li><a href="main_info.html">Основная информация</a></li>
+      <li><a href="documentation.html">Документация</a></li>
+      <li><a href="upgrade_system.html">Система повышения</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="achievement-container">
+  <h2 style="text-align:center; margin-bottom: 30px;">Список Маршалов-коммандеров</h2>
+  
+  <div class="container">
+    <!-- Карточки бойцов - данные взяты из ваших изображений -->
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="AllVis">
+      <h3>AllVis</h3>
+      <p>Номер: 00044</p>
+      <p>Дата: 05.02.2019 - 03.03.2019</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Dex">
+      <h3>Dex</h3>
+      <p>Номер: 00009</p>
+      <p>Дата: 04.03.2019 - 19.05.2019</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Natikо">
+      <h3>Natikо</h3>
+      <p>Номер: 00053</p>
+      <p>Дата: 19.05.2019 - 19.06.2019</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Keyto">
+      <h3>Keyto</h3>
+      <p>Номер: 00062</p>
+      <p>Дата: 16.08.2019 - 10.11.2019</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Ackeman">
+      <h3>Ackeman</h3>
+      <p>Номер: 00178</p>
+      <p>Дата: 19.06.2019 - 16.08.2019</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Dendi">
+      <h3>Dendi</h3>
+      <p>Номер: 00040</p>
+      <p>Дата: 10.11.2019 - 15.11.2019</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Jackson">
+      <h3>Jackson</h3>
+      <p>Номер: 03741</p>
+      <p>Дата: 15.11.2019 - 07.02.2020</p>
+    </div>
+
+        <div class="card">
+      <img src="static/images/Marshel.png" alt="Jackson">
+      <h3>Zinergia</h3>
+      <p>Номер: 00287</p>
+      <p>Дата: 07.02.2019 - 31.05.2020</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Gans">
+      <h3>Ганс</h3>
+      <p>Номер: 00965</p>
+      <p>Дата: 31.05.2020 - 16.08.2020</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Eclipse">
+      <h3>Eclipse</h3>
+      <p>Номер: 00864</p>
+      <p>Дата: 16.08.2020 - 30.01.2021</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Lomka">
+      <h3>Lomka</h3>
+      <p>Номер: 34332</p>
+      <p>Дата: 30.01.2021 - 01.08.2021</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Jackson">
+      <h3>Jackson</h3>
+      <p>Номер: 03741</p>
+      <p>Дата: 01.08.2021 - 12.09.2021</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Eclipse">
+      <h3>Eclipse</h3>
+      <p>Номер: 08684</p>
+      <p>Дата: 12.09.2021 - 07.10.2021</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Iker">
+      <h3>Iker</h3>
+      <p>Номер: 45161</p>
+      <p>Дата: 07.10.2021 - 21.11.2021</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Phoenix">
+      <h3>Phoenix</h3>
+      <p>Номер: 00510</p>
+      <p>Дата: 21.11.2021 - 14.04.2022</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Phoenix">
+      <h3>Ackerman</h3>
+      <p>Номер: 00178</p>
+      <p>Дата: 14.04.2022 - 04.07.2022</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Phoenix">
+      <h3>Iker</h3>
+      <p>Номер: 45161</p>
+      <p>Дата: 04.07.2022 - 19.03.2023</p>
+    </div>
+
+     <div class="card">
+      <img src="static/images/Marshel.png" alt="Phoenix">
+      <h3>ZeFink</h3>
+      <p>Номер: 66082</p>
+      <p>Дата: 19.03.2023 - 08.06.2023</p>
+    </div>
+
+<div class="card">
+  <img src="static/images/Marshel.png" alt="Jackson">
+  <h3>Jackson</h3>
+  <p>Номер: 03741</p>
+  <p>Дата: 08.06.2023 - 10.07.2023</p>
+</div>
+
+<div class="card">
+  <img src="static/images/Marshel.png" alt="Alucard">
+  <h3>Alucard</h3>
+  <p>Номер: 65881</p>
+  <p>Дата: 10.07.2023 - 15.10.2023</p>
+</div>
+
+<div class="card">
+  <img src="static/images/Marshel.png" alt="Dark Angel">
+  <h3>Dark Angel</h3>
+  <p>Номер: 17916</p>
+  <p>Дата: 15.10.2023 - 01.04.2024</p>
+</div>
+
+<div class="card">
+  <img src="static/images/Marshel.png" alt="Chipper">
+  <h3>Chipper</h3>
+  <p>Номер: 23299</p>
+  <p>Дата: 01.04.2024 - 26.05.2024</p>
+</div>
+
+<div class="card">
+  <img src="static/images/Marshel.png" alt="Chipper">
+  <h3>Paziloyveteran</h3>
+  <p>Номер: 52476</p>
+  <p>Дата: 26.05.2024 - 11.07.2024</p>
+</div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="fumado">
+      <h3>fumado</h3>
+      <p>Номер: 0074</p>
+      <p>Дата: 11.07.2024 - 30.09.2024</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="dedhot">
+      <h3>dedhot</h3>
+      <p>Номер: 0059</p>
+      <p>Дата: 30.09.2024 - 18.10.2024</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Isigami">
+      <h3>Isigami</h3>
+      <p>Номер: 0037</p>
+      <p>Дата: 18.10.2024 - 15.11.2024</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Isigami">
+      <h3>Isigami</h3>
+      <p>Номер: 0010</p>
+      <p>Дата: 21.07.2025 - 10.10.2025</p>
+    </div>
+
+    <div class="card">
+      <img src="static/images/Marshel.png" alt="Madara">
+      <h3>Madara</h3>
+      <p>Номер: 0025</p>
+      <p>Дата: 10.10.2025 - ??</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p><strong style="color:#caa24d;">@Собственность Корусантская Гвардии</strong><br>
+  <span style="color:#f1faee;"></span></p>
+</footer>
+
+</body>
+</html>

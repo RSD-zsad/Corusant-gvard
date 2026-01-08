@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Система повышения — Корусантская гвардия</title>
+<style>
+/* Основной стиль */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6b0000, #0a1a2f);
+    color: #f1faee;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounceIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* Заголовок и навигация */
+.header {
+    text-align: center;
+    padding: 50px 20px;
+    background: rgba(30, 0, 0, 0.85);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+.header h1 {
+    font-size: 3rem;
+    color: #caa24d;
+}
+nav {
+    margin: 20px 0;
+    animation: fadeIn 1.2s ease-in-out;
+}
+.nav-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.nav-list li { margin: 0 15px; }
+.nav-list a {
+    color: #caa24d;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.nav-list a:hover { color: #ffffff; }
+
+/* Контейнер информации */
+.achievement-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 25px;
+    background: rgba(10, 20, 40, 0.85);
+    border-radius: 10px;
+    border: 2px solid #caa24d;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    animation: fadeIn 1.5s ease;
+    overflow-x: auto;
+}
+
+/* Блоки позиций */
+.position {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(30, 0, 0, 0.6);
+    animation: bounceIn 0.8s ease;
+}
+.position h3 {
+    font-size: 1.8rem;
+    color: #a8dadc;
+    margin-top: 0;
+}
+.position div {
+    flex: 2;
+    margin-left: 15px;
+}
+.position img {
+    width: 150px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* Списки */
+.position ul {
+    padding-left: 20px;
+}
+.position li {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+/* Стикер рядом с текстом */
+.criteria-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0px;
+}
+.criteria-line strong {
+    font-size: 1.5rem;
+}
+.criteria-line img.sticker {
+    width: 40px;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* Футер */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(30, 0, 0, 0.95);
+    border-top: 2px solid #caa24d;
+    color: #caa24d;
+    font-size: 14px;
+    animation: fadeIn 1.8s ease-in;
+}
+
+/* Инфо-блок */
+.info-box {
+    background-color: rgba(30, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 650px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 1.15rem;
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+    <h1>Система повышения — Корусантская гвардия</h1>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="index.html">Главная страница</a></li>
+            <li><a href="main_info.html">Основная информация</a></li>
+            <li><a href="documentation.html">Документация</a></li>
+            <li><a href="military_doctors.html">Маршалы</a></li>
+        </ul>
+    </nav>
+    <div class="info-box">
+        <p>За день разрешено проводить <strong>1 лекцию</strong> или <strong>1 практику</strong> бойцу.</p>
+    </div>
+</header>
+
+<section class="achievement-container">
+    <h2>Критерии повышения званий</h2>
+
+    <!-- Пример предыдущих званий -->
+    <div class="position">
+        <div>
+            <h3>Курсант ⟶ Оперативник</h3>
+            <strong>Обязательные критерии:</strong>
+            <ul>
+                <li>14 дней выслуги на звании.</li>
+                <li>Прохождение "Вступительного Курса"</li>
+            </ul>
+        </div>
+        <img src="static/images/Oper.png" alt="Oper">
+    </div>
+
+    <div class="position">
+        <div>
+            <h3>Оперативник ⟶ Инспектор</h3>
+            <strong>Обязательные критерии:</strong>
+            <ul>
+                <li>14 дней выслуги на звании.</li>
+                <li>По решению Командирского состава.</li>
+            </ul>
+        </div>
+        <img src="static/images/Inspekror.png" alt="Inspekror">
+    </div>
+
+    <div class="position">
+        <div>
+            <h3>Инспектор ⟶ Следователь</h3>
+            <strong>Обязательные критерии:</strong>
+            <ul>
+                <li>14 дней выслуги на звании.</li>
+                <li>По решению Командирского состава.</li>
+                <li>Прохождение "Внутренней академии офицеров"</li>
+            </ul>
+        </div>
+        <img src="static/images/Sledov.png" alt="Senior Sledov">
+    </div>
+
+    <div class="position">
+        <div>
+            <h3>Следователь ⟶ Дознаватель</h3>
+            <strong>Обязательные критерии:</strong>
+            <ul>
+                <li>21 дней выслуги на звании.</li>
+                <li>По решению Командирского состава.</li>
+            </ul>
+        </div>
+        <img src="static/images/Doznav.png" alt="Doznav">
+    </div>
+
+    <!-- Звание Осужденого с стикером -->
+    <div class="position">
+        <div>
+            <h3>Критерии повышения на Осужденого</h3>
+            <div class="criteria-line">
+                <strong>Обязательные критерии:</strong>
+                <img src="static/images/Стикер.png" alt="Sticker" class="sticker">
+            </div>
+            <ul>
+                <li>Совершить преступление</li>
+            </ul>
+        </div>
+        <img src="static/images/Osuj.png" alt="Osuj" class="main-image">
+    </div>
+
+</section>
+
+<footer class="footer">
+    <p class="footer-text">
+        <span style="font-weight: bold; color: #caa24d;">@Собственность Корусантской гвардии</span>
+    </p>
+</footer>
+
+</body>
+</html>

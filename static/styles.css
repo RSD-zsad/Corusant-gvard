@@ -1,0 +1,242 @@
+/* ===== ОСНОВНОЙ ФОН СТРАНИЦЫ ===== */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6b0000, #0a1a2f);
+    color: #f1faee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1s ease-out;
+}
+
+/* ===== АНИМАЦИИ ===== */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+/* ===== ШАПКА ===== */
+.header {
+    text-align: center;
+    padding: 20px;
+    background: rgba(30, 0, 0, 0.9);
+    border-bottom: 3px solid #caa24d;
+}
+
+.header h1 {
+    font-size: 3rem;
+    color: #caa24d;
+    animation: fadeIn 1s ease-out;
+}
+
+/* ===== НАВИГАЦИЯ ===== */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-list li {
+    margin: 10px 15px;
+}
+
+.nav-list a {
+    color: #caa24d;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: #ffffff;
+}
+
+/* ===== ИНФОРМАЦИЯ ===== */
+.info {
+    margin: 20px;
+    padding: 20px;
+    background: rgba(10, 20, 40, 0.8);
+    border: 2px solid #caa24d;
+    border-radius: 10px;
+}
+
+/* ===== ПОЗИЦИИ ===== */
+.position {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(20, 0, 0, 0.9);
+    box-shadow: 0 0 10px rgba(202, 162, 77, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.position:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(202, 162, 77, 0.8);
+}
+
+.position div {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.position h2 {
+    font-size: 2rem;
+    color: #caa24d;
+    margin-bottom: 10px;
+}
+
+.position img {
+    width: 120px;
+    height: auto;
+    margin-left: 20px;
+    display: block;
+}
+
+/* ===== СТИКЕР РЯДОМ С ТЕКСТОМ ===== */
+.sticker-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* расстояние между текстом и стикером */
+    margin-top: 10px;
+}
+
+.sticker-container img {
+    width: 40px; /* размер стикера */
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px; /* чуть закругляем углы */
+    box-shadow: 0 0 10px rgba(202, 162, 77, 0.7);
+}
+
+/* ===== ФУТЕР ===== */
+.footer {
+    margin-top: auto;
+    padding: 15px;
+    text-align: center;
+    background: rgba(30, 0, 0, 0.9);
+    border-top: 2px solid #caa24d;
+    color: #caa24d;
+}
+
+/* ===== ДОСТИЖЕНИЯ ===== */
+.achievement-container {
+    margin: 20px;
+    padding: 20px;
+    background: rgba(20, 0, 0, 0.9);
+    border-radius: 10px;
+}
+
+.achievement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.difficulty {
+    font-weight: bold;
+    color: #ff5722;
+}
+
+.achievement {
+    border: 1px solid #caa24d;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: rgba(202, 162, 77, 0.1);
+    transition: background-color 0.3s;
+}
+
+.achievement:hover {
+    background-color: rgba(202, 162, 77, 0.2);
+}
+
+/* ===== КАРТОЧКИ ЛЕГЕНД ===== */
+.legend-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    width: 250px;
+    height: 400px;
+    margin: 15px;
+    border-radius: 10px;
+    background: rgba(20, 0, 0, 0.9);
+    box-shadow: 0 4px 6px rgba(202, 162, 77, 0.7);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.legend-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.legend-info {
+    padding: 10px;
+    text-align: center;
+    color: #caa24d;
+}
+
+.legend-details {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: rgba(20, 0, 0, 0.95);
+    color: #f1faee;
+    text-align: center;
+    padding: 10px;
+    transition: bottom 0.5s ease;
+}
+
+.legend-card.active .legend-details {
+    bottom: 0;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1200px) {
+    .position img { width: 100px; }
+}
+
+@media (max-width: 768px) {
+    .position { flex-direction: column; align-items: flex-start; }
+    .position img { margin-left: 0; margin-top: 10px; }
+}
+
+@media (max-width: 480px) {
+    .header h1 { font-size: 2rem; }
+    .position h2 { font-size: 1.5rem; }
+    .sticker-container img { width: 30px; height: 30px; }
+}
+.criteria-line {
+  display: inline-flex;        /* Чтобы текст и картинка были в одной строке */
+  align-items: center;         /* Вертикальное выравнивание по центру */
+  gap: 10px;                   /* Расстояние между текстом и картинкой */
+  font-weight: bold;
+  font-size: 1.2rem;           /* Размер текста чуть увеличен */
+  color: #f1faee;
+}
+
+.criteria-line .sticker {
+  width: 30px;                 /* Размер стикера */
+  height: 30px;
+  object-fit: contain;
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Документация Корусантской Гвардии</title>
+
+<style>
+/* ===== ОСНОВНОЙ СТИЛЬ ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6b0000, #0a1a2f);
+    color: #f1faee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ===== ШАПКА ===== */
+.header {
+    text-align: center;
+    padding: 20px;
+    background: rgba(30, 0, 0, 0.9);
+    border-bottom: 3px solid #caa24d;
+}
+
+.header h1 {
+    font-size: 2.8rem;
+    color: #caa24d;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.nav-list li {
+    margin: 10px 15px;
+}
+
+.nav-list a {
+    color: #caa24d;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.nav-list a:hover {
+    color: #ffffff;
+}
+
+/* ===== ПОИСК ===== */
+.search-container {
+    margin: 20px;
+    text-align: center;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 1em;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: rgba(20, 0, 0, 0.8);
+    color: #f1faee;
+}
+
+/* ===== РАЗДЕЛЫ ДОКУМЕНТАЦИИ ===== */
+.section-header {
+    cursor: pointer;
+    background-color: rgba(30, 0, 0, 0.9);
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin: 15px 20px 5px 20px;
+    font-size: 1.2rem;
+    color: #caa24d;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 0 10px rgba(202,162,77,0.5);
+}
+
+.section-header:hover {
+    background-color: rgba(50, 0, 0, 0.9);
+    transform: scale(1.02);
+}
+
+.section {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 20px;
+    margin: 0 20px 20px 20px;
+    border-radius: 10px;
+    background-color: rgba(10, 20, 40, 0.85);
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+}
+
+.section.open {
+    max-height: 1000px;
+    opacity: 1;
+    padding: 15px 20px;
+}
+
+/* ===== Ссылки ===== */
+.doc-link {
+    color: #caa24d;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+    transition: color 0.3s;
+}
+
+.doc-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* ===== ФУТЕР ===== */
+.footer {
+    margin-top: auto;
+    padding: 15px;
+    text-align: center;
+    background: rgba(30, 0, 0, 0.9);
+    border-top: 2px solid #caa24d;
+    color: #caa24d;
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+    <h1>Документация Корусантской Гвардии</h1>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="main_info.html">Основная информация</a></li>
+            <li><a href="upgrade_system.html">Система повышения</a></li>
+            <li><a href="military_doctors.html">История Маршалов</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="search-container">
+    <input type="text" id="searchInput" class="search-input" placeholder="Поиск по документации..." onkeyup="searchDocs()">
+</div>
+
+<section class="info">
+
+    <div class="section-header" onclick="toggleSection('general-doc')">1. Общая документация Гвардии</div>
+    <div id="general-doc" class="section">
+        <ul>
+            <li><a class="doc-link" href="https://docs.google.com/spreadsheets/d/1dheEjDN8w4tkarlPl0KmEpbCZfRn41mNwMYqmwmhI2g/edit?gid=1997952244#gid=1997952244" target="_blank">Таблица Корусантской Гвардии</a></li>
+            <li><a class="doc-link" href="https://docs.google.com/document/d/1RVEtD14hDo733wNYPpPy2aDQZwUg3xu0ilbSs-sDT2c/edit?tab=t.0" target="_blank">Устав Корусантской Гвардии</a></li>
+            <li><a class="doc-link" href="https://docs.google.com/document/d/1QYdzAUHWyHZ8B4Z0XBppIKR_GUj6gCa_F_K_ZArlFik/edit?tab=t.0#heading=h.xmydpz81lwey" target="_blank">Документация Корусантской Гвардии</a></li>
+            <li><a class="doc-link" href="https://sites.google.com/view/corusantguard/наша-документация#h.ihy1f7efjwqj" target="_blank">База даних</a></li>
+            <li><a class="doc-link" href="docs.google.com/document/d/1b1xcwKUl2npViEpSgrLfvUP132sQMuQ6vGkt_vGBAkg/edit?usp=sharing" target="_blank">Регламент Расстрела</a></li>
+            <li><a class="doc-link" href="docs.google.com/document/d/12mzKi15nDH0qF51fsPF45f8m1bZTMMjkZ3JW2RndpK8/edit?usp=sharing" target="_blank">Положение про обыск</a></li>
+            <li><a class="doc-link" href="docs.google.com/document/d/1DWzwGOm3lng011fBrVjrZXVJuOdvGOflWNLcOn8Q8Kc/edit?usp=sharing" target="_blank">Памятка проведения разбирательств и допросов </a></li>
+            <li><a class="doc-link" href="docs.google.com/document/d/1Lxq7VKpT8zNX_zSLcJUMF_oulUsPStdgVBdw88kgz2c/edit?usp=sharing" target="_blank">Классификация грифов секретности</a></li>
+            <li><a class="doc-link" href="https://docs.google.com/document/d/1mrA51UJPBfsy1qJYFqeNWXfkkfEL7Pz97kjek5aYBxo/edit?tab=t.0#heading=h.yitlx1spzkpn" target="_blank">Положение о порядке подачи, рассмотрения и утверждения приказа о занесении бойца в ОДИСБ</a></li>
+        </ul>
+    </div>
+
+    <div class="section-header" onclick="toggleSection('medicine-doc')">2. Общая Документация В.А.Р</div>
+    <div id="medicine-doc" class="section">
+        <ul>
+            <li><a class="doc-link" href="https://docs.google.com/spreadsheets/d/1oM3Smm25hT43f_LiywydzHev3zWXINv57xq24-l7dng/edit?gid=2101148816#gid=2101148816" target="_blank">Вооружение базы</a></li>
+            <li><a class="doc-link" href="https://sites.google.com/view/starwarsclonesphase2/устав-вар" target="_blank">Устав В.А.Р</a></li>
+            <li><a class="doc-link" href="https://sites.google.com/view/starwarsclonesphase2/устав-вар/регламенты" target="_blank">Регламенты</a></li>
+            <li><a class="doc-link" href="https://sites.google.com/view/starwarsclonesphase2/устав-вар/штаб" target="_blank">Штаб</a></li>
+            <li><a class="doc-link" href="https://sites.google.com/view/starwarsclonesphase2/устав-вар/техника-безопасности" target="_blank">Техника безопасности</a></li>
+            <li><a class="doc-link" href="https://sites.google.com/view/starwarsclonesphase2/правила-afk" target="_blank">правила-afk</a></li>
+        </ul>
+    </div>
+
+    <div class="section-header" onclick="toggleSection('recruitment-doc')">3. Дополнительное</div>
+    <div id="recruitment-doc" class="section">
+        <ul>
+            <li><a class="doc-link" href="https://docs.google.com/document/d/1N3yBqBHAcmRX5PDyXcO0grUvZ_F8pFfHJYQISQmTzzs/edit?tab=t.0" target="_blank">Присяга</a></li>
+            <li><a class="doc-link" href="https://drive.google.com/file/d/1Z0cvW0l1S2dO0P1rHpgi4xfb59KxkwoC/view" target="_blank">CFG Отсчёт AFK</a></li>
+            <li><a class="doc-link" href="drive.google.com/file/d/1Y_SwzrPJOp4DVlH1QENZABrU7q43fe2X/view?usp=sharing" target="_blank">CFG [ОБЫСК]</a></li>
+        </ul>
+    </div>
+
+</section>
+
+<footer class="footer">
+    © Корусантская гвардия Республики
+</footer>
+
+<script>
+function toggleSection(id) {
+    document.getElementById(id).classList.toggle('open');
+}
+
+function searchDocs() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const links = document.querySelectorAll('.doc-link');
+    const sections = document.querySelectorAll('.section');
+
+    sections.forEach(section => {
+        let hasMatch = false;
+        const linksInSection = section.querySelectorAll('.doc-link');
+        linksInSection.forEach(link => {
+            if(link.textContent.toLowerCase().includes(input)) {
+                link.parentElement.style.display = '';
+                hasMatch = true;
+            } else {
+                link.parentElement.style.display = 'none';
+            }
+        });
+        section.classList.toggle('open', hasMatch);
+    });
+}
+</script>
+
+</body>
+</html>
